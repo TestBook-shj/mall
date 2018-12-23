@@ -2,11 +2,15 @@
  * @Author: TestBook-shj
  * @Date:   2018-12-21 22:08:21
  * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2018-12-23 21:29:13
+ * @Last Modified time: 2018-12-23 22:26:22
  */
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+
+// 环境变量配置,dev/online
+var WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
+console.log(WEBPACK_ENV)
 // 获取html-webpack-plugin参数的方法
 var getHtmlConfig = function(name) {
   return {
@@ -26,6 +30,7 @@ var config = {
   },
   output: {
     path: './dist',
+    publicPath: '/dist',
     filename: 'js/[name].js'
   },
   externals: {
@@ -53,5 +58,9 @@ var config = {
     new HtmlWebpackPlugin(getHtmlConfig('login')),
   ]
 };
+
+if('dev' === WEBPACK_ENV){
+  config.entry.common.push('webpack-dev-server/client?http://localhost:8088/');
+}
 
 module.exports = config;
