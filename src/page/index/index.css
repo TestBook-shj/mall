@@ -2,8 +2,8 @@
 * @Author: TestBook-shj
 * @Date:   2018-12-22 21:05:16
 * @Last Modified by:   TestBook-shj
-* @Last Modified time: 2018-12-22 22:34:47
+* @Last Modified time: 2018-12-23 21:16:56
 */
 body {
-  background-color: #ccc;
+  background: url('../../image/test-img.png');
 }

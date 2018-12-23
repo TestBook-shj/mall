@@ -2,7 +2,7 @@
  * @Author: TestBook-shj
  * @Date:   2018-12-21 22:08:21
  * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2018-12-23 20:40:18
+ * @Last Modified time: 2018-12-23 21:29:13
  */
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -35,6 +35,9 @@ var config = {
     loaders: [{
       test: /\.css$/,
       loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+    }, {
+      test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/,
+      loader: 'url-loader?limit=100&name=resource/[name].[ext]'
     }]
   },
   plugins: [
