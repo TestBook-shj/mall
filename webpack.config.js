@@ -2,7 +2,7 @@
  * @Author: TestBook-shj
  * @Date:   2018-12-21 22:08:21
  * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2018-12-23 22:26:22
+ * @Last Modified time: 2018-12-25 21:54:35
  */
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -45,6 +45,15 @@ var config = {
       loader: 'url-loader?limit=100&name=resource/[name].[ext]'
     }]
   },
+  // 配置别名
+  resolve: {
+    alias: {
+      util: __dirname + '/src/util',
+      page: __dirname + '/src/page',
+      service: __dirname + '/src/service',
+      image: __dirname + '/src/image',
+    }
+  },
   plugins: [
     // 独立通用模块到js/base.js
     new webpack.optimize.CommonsChunkPlugin({
@@ -59,7 +68,7 @@ var config = {
   ]
 };
 
-if('dev' === WEBPACK_ENV){
+if ('dev' === WEBPACK_ENV) {
   config.entry.common.push('webpack-dev-server/client?http://localhost:8088/');
 }
 
