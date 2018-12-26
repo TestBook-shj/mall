@@ -1,12 +1,15 @@
 /*
  * @Author: TestBook-shj
  * @Date:   2018-12-25 21:29:06
- * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2018-12-25 22:00:30
+ * @Last Modified by:   Administrator
+ * @Last Modified time: 2018-12-26 19:16:02
  */
 
 'use strict';
-
+var Hogan = require('hogan.js'); 
+var conf = {
+  serverHost: ''
+};
 var _mm = {
   // 网络请求
   request: function(param) {
@@ -34,6 +37,23 @@ var _mm = {
         typeof param.error === 'function' && param.error(err.statusText);
       }
     });
+  },
+  // 获取服务器地址
+  getSeverUrl: function(path){
+    return conf.serverHost + path;
+  },
+  // 获取url参数
+  getUrlParam: function(name){
+    // happymmall.com/product/list?keyword=xxx&page=1
+    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)');
+    var result = window.location.search.substr(1).match(reg);
+    return result ? decodeURIComponent(result[2]) : null;
+  },
+  // 渲染HTML模板
+  renderHtml: function(htmlTemplate, data){
+    var template = Hogan.compile(htmlTemplate),
+    result = template.render(data);
+    return result;
   },
   // 统一登陆处理
   doLogin: function() {
