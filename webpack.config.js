@@ -1,8 +1,8 @@
 /*
  * @Author: TestBook-shj
  * @Date:   2018-12-21 22:08:21
- * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2018-12-25 21:54:35
+ * @Last Modified by:   Administrator
+ * @Last Modified time: 2018-12-27 16:30:18
  */
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -48,6 +48,7 @@ var config = {
   // 配置别名
   resolve: {
     alias: {
+      node_modules: __dirname + '/node_modules',
       util: __dirname + '/src/util',
       page: __dirname + '/src/page',
       service: __dirname + '/src/service',
