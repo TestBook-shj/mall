@@ -2,17 +2,10 @@
  * @Author: TestBook-shj
  * @Date:   2018-12-21 21:36:38
  * @Last Modified by:   Administrator
- * @Last Modified time: 2018-12-26 19:19:07
+ * @Last Modified time: 2018-12-27 17:19:52
  */
 
 'use strict'
-
+require('page/common/nav/index.js');
 var _mm = require('util/mm.js');
 
-console.log(_mm.getUrlParam('test'))
-
-var html = '<div>{{data}}</div>';
-var data = {
-	data: 123
-}
-console.log(_mm.renderHtml(html, data));
