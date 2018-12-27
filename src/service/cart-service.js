@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2018-12-27 18:09:12
 * @Last Modified by:   TestBook-shj
-* @Last Modified time: 2018-12-27 21:38:04
+* @Last Modified time: 2018-12-27 23:03:45
 */
 'use strict'
 
@@ -18,3 +18,4 @@ var _cart = {
 		});
 	}
 }
+module.exports = _cart;

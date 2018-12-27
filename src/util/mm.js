@@ -1,8 +1,8 @@
 /*
  * @Author: TestBook-shj
  * @Date:   2018-12-25 21:29:06
- * @Last Modified by:   Administrator
- * @Last Modified time: 2018-12-27 15:13:22
+ * @Last Modified by:   TestBook-shj
+ * @Last Modified time: 2018-12-27 22:59:50
  */
 
 'use strict';
@@ -39,7 +39,7 @@ var _mm = {
     });
   },
   // 获取服务器地址
-  getSeverUrl: function(path) {
+  getServerUrl: function(path) {
     return conf.serverHost + path;
   },
   // 获取url参数
