@@ -1,12 +1,12 @@
 /*
 * @Author: Administrator
 * @Date:   2018-12-27 18:09:12
-* @Last Modified by:   Administrator
-* @Last Modified time: 2018-12-27 18:12:04
+* @Last Modified by:   TestBook-shj
+* @Last Modified time: 2018-12-27 21:38:04
 */
 'use strict'
 
-var _mm =require('until/mm.js');
+var _mm =require('util/mm.js');
 
 var _cart = {
 	// 获取购物车数量
