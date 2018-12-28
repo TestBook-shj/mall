@@ -1,8 +1,8 @@
 /*
  * @Author: TestBook-shj
  * @Date:   2018-12-21 22:08:21
- * @Last Modified by:   Administrator
- * @Last Modified time: 2018-12-27 16:30:18
+ * @Last Modified by:   TestBook-shj
+ * @Last Modified time: 2018-12-28 21:03:40
  */
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -43,6 +43,9 @@ var config = {
     }, {
       test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/,
       loader: 'url-loader?limit=100&name=resource/[name].[ext]'
+    },{
+      test:/\.string$/,
+      loader: 'html-loader'
     }]
   },
   // 配置别名

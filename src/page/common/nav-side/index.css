@@ -2,11 +2,26 @@
 * @Author: TestBook-shj
 * @Date:   2018-12-27 22:37:14
 * @Last Modified by:   TestBook-shj
-* @Last Modified time: 2018-12-27 22:41:34
+* @Last Modified time: 2018-12-28 21:33:01
 */
+/*导航主体*/
 .nav-side{
   float: left;
+  width: 130px;
+  min-height: 100px;
 }
+.nav-side .nav-item{
+  line-height: 25px;
+  font-size: 13px;
+}
+.nav-side .nav-item .link{
+  color: #888;
+}
+.nav-side .nav-item.active .link{
+  color: #c60023;
+}
+/*右侧内容区*/
 .content.with-nav{
   float: left;
+  width: 950px;
 } 
