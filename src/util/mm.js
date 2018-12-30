@@ -2,7 +2,7 @@
  * @Author: TestBook-shj
  * @Date:   2018-12-25 21:29:06
  * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2018-12-27 22:59:50
+ * @Last Modified time: 2018-12-30 19:33:47
  */
 
 'use strict';
@@ -81,7 +81,7 @@ var _mm = {
   },
   // 统一登陆处理
   doLogin: function() {
-    window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+    window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
   },
   // 跳转首页
   goHome: function(){
