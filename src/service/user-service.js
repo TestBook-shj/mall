@@ -2,7 +2,7 @@
  * @Author: Administrator
  * @Date:   2018-12-27 17:51:02
  * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2018-12-31 13:26:09
+ * @Last Modified time: 2018-12-31 14:43:49
  */
 'use strict';
 var _mm = require('util/mm.js');
@@ -39,6 +39,37 @@ var _user = {
 				type: 'userInfo',
 				str: username
 			},
+			menthod: 'POST',
+			success: resolve,
+			error: reject
+		});
+	},
+	// 获取用户密码提示问题
+	getQuestion: function(username, resolve, reject) {
+		_mm.request({
+			url: _mm.getServerUrl('/user/forget_get_question.do'),
+			data: {
+				username: username
+			},
+			menthod: 'POST',
+			success: resolve,
+			error: reject
+		});
+	},
+	// 检查密码提示问题答案
+	checkAnswer: function(userInfo, resolve, reject) {
+		_mm.request({
+			url: _mm.getServerUrl('/user/forget_check_answer.do'),
+			data: userInfo,
+			menthod: 'POST',
+			success: resolve,
+			error: reject
+		});
+	},
+	resetPassword: function(userInfo, resolve, reject) {
+		_mm.request({
+			url: _mm.getServerUrl('/user/forget_reset_password.do'),
+			data: userInfo,
 			menthod: 'POST',
 			success: resolve,
 			error: reject
