@@ -2,7 +2,7 @@
  * @Author: Administrator
  * @Date:   2018-12-27 17:51:02
  * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2018-12-31 14:43:49
+ * @Last Modified time: 2018-12-31 21:27:37
  */
 'use strict';
 var _mm = require('util/mm.js');
@@ -70,6 +70,14 @@ var _user = {
 		_mm.request({
 			url: _mm.getServerUrl('/user/forget_reset_password.do'),
 			data: userInfo,
+			menthod: 'POST',
+			success: resolve,
+			error: reject
+		});
+	},
+	getUserInfo: function(resolve, reject) {
+		_mm.request({
+			url: _mm.getServerUrl('./user/get_information.do'),
 			menthod: 'POST',
 			success: resolve,
 			error: reject

@@ -1,8 +1,8 @@
 /*
 * @Author: Administrator
 * @Date:   2018-12-27 16:36:31
-* @Last Modified by:   Administrator
-* @Last Modified time: 2018-12-27 16:46:14
+* @Last Modified by:   TestBook-shj
+* @Last Modified time: 2018-12-31 20:34:33
 */
 .nav-simple{
 	height: 60px;
@@ -15,4 +15,5 @@
 	font-size: 26px;
 	font-weight: bold;
 	color: #c60023;
+  text-decoration: none;
 }
