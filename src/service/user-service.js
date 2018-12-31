@@ -2,7 +2,7 @@
  * @Author: Administrator
  * @Date:   2018-12-27 17:51:02
  * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2018-12-31 21:27:37
+ * @Last Modified time: 2018-12-31 22:53:37
  */
 'use strict';
 var _mm = require('util/mm.js');
@@ -78,6 +78,16 @@ var _user = {
 	getUserInfo: function(resolve, reject) {
 		_mm.request({
 			url: _mm.getServerUrl('./user/get_information.do'),
+			menthod: 'POST',
+			success: resolve,
+			error: reject
+		});
+	},
+	// 更新个人信息
+	updateUserInfo: function(userInfo, resolve, reject) {
+		_mm.request({
+			url: _mm.getServerUrl('./user/update_information.do'),
+			data: userInfo,
 			menthod: 'POST',
 			success: resolve,
 			error: reject
