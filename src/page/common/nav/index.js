@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2018-12-27 17:15:13
 * @Last Modified by:   TestBook-shj
-* @Last Modified time: 2018-12-27 23:03:58
+* @Last Modified time: 2018-12-31 13:37:15
 */
 'use strict'
 require('./index.css');
@@ -24,7 +24,7 @@ var nav = {
 		});
 		// 注册点击事件
 		$('.js-register').click(function(event) {
-			window.location.href = './register.html';
+			window.location.href = './user-register.html';
 		});
 		// 退出点击事件
 		$('.logout').click(function(event) {
