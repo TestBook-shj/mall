@@ -2,7 +2,7 @@
  * @Author: TestBook-shj
  * @Date:   2018-12-27 22:37:05
  * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2018-12-28 21:30:37
+ * @Last Modified time: 2019-01-01 12:14:31
  */
 'user strict';
 require('./index.css');
@@ -21,9 +21,9 @@ var navSide = {
       desc: '我的订单',
       href: './order-list.html'
     }, {
-      name: 'pass-updata',
+      name: 'user-pass-update',
       desc: '修改密码',
-      href: './pass-updata.html'
+      href: './user-pass-update.html'
     }, {
       name: 'about',
       desc: '关于mmall',

@@ -2,7 +2,7 @@
  * @Author: Administrator
  * @Date:   2018-12-27 17:51:02
  * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2018-12-31 22:53:37
+ * @Last Modified time: 2019-01-01 12:55:41
  */
 'use strict';
 var _mm = require('util/mm.js');
@@ -87,6 +87,16 @@ var _user = {
 	updateUserInfo: function(userInfo, resolve, reject) {
 		_mm.request({
 			url: _mm.getServerUrl('./user/update_information.do'),
+			data: userInfo,
+			menthod: 'POST',
+			success: resolve,
+			error: reject
+		});
+	},
+	// 登陆状态下更新密码
+	updatePassword: function(userInfo, resolve, reject) {
+		_mm.request({
+			url: _mm.getServerUrl('./user/reset_password.do'),
 			data: userInfo,
 			menthod: 'POST',
 			success: resolve,
