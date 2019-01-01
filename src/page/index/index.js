@@ -2,7 +2,7 @@
  * @Author: TestBook-shj
  * @Date:   2018-12-21 21:36:38
  * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2019-01-01 22:20:08
+ * @Last Modified time: 2019-01-01 22:22:22
  */
 'use strict'
 require('./index.css');
@@ -23,7 +23,7 @@ $(function() {
   });
   // 前一张和后一张操作的事件绑定
   $('.banner-con .banner-arrow').click(function(){
-    var forward = $(this).hassClass('prev') ? 'prev' : 'next';
+    var forward = $(this).hasClass('prev') ? 'prev' : 'next';
     $slider.data('unslider')[forward]();
   })
 });

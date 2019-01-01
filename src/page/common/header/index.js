@@ -2,7 +2,7 @@
  * @Author: TestBook-shj
  * @Date:   2018-12-27 21:48:50
  * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2018-12-27 22:49:45
+ * @Last Modified time: 2019-01-01 22:45:10
  */
 'user strict';
 require('./index.css');
@@ -10,13 +10,14 @@ var _mm = require('util/mm.js');
 // 通用页面头部
 var header = {
   init: function() {
+    this.onLoad();
     this.bindEvent();
   },
   onLoad: function() {
     var keyword = _mm.getUrlParam('keyword');
     // keyword存在，则回填输入框
     if (keyword) {
-      $('#search-inport').val(keyword);
+      $('#search-input').val(keyword);
     };
   },
   bindEvent: function() {
