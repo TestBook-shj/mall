@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2018-12-27 17:15:13
 * @Last Modified by:   TestBook-shj
-* @Last Modified time: 2018-12-31 13:37:15
+* @Last Modified time: 2019-01-02 22:40:41
 */
 'use strict'
 require('./index.css');
@@ -27,7 +27,8 @@ var nav = {
 			window.location.href = './user-register.html';
 		});
 		// 退出点击事件
-		$('.logout').click(function(event) {
+		$('.js-logout').click(function(event) {
+			console.log(1)
 			_user.logout(function(res){
 				window.location.reload();
 			}, function(errMsg){

@@ -2,7 +2,7 @@
  * @Author: Administrator
  * @Date:   2018-12-27 17:51:02
  * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2019-01-01 12:55:41
+ * @Last Modified time: 2019-01-02 22:53:00
  */
 'use strict';
 var _mm = require('util/mm.js');
@@ -47,7 +47,7 @@ var _user = {
 	// 获取用户密码提示问题
 	getQuestion: function(username, resolve, reject) {
 		_mm.request({
-			url: _mm.getServerUrl('/user/forget_get_question.do'),
+			url: _mm.getServerUrl('./user/forget_get_question.do'),
 			data: {
 				username: username
 			},
@@ -59,7 +59,7 @@ var _user = {
 	// 检查密码提示问题答案
 	checkAnswer: function(userInfo, resolve, reject) {
 		_mm.request({
-			url: _mm.getServerUrl('/user/forget_check_answer.do'),
+			url: _mm.getServerUrl('./user/forget_check_answer.do'),
 			data: userInfo,
 			menthod: 'POST',
 			success: resolve,
@@ -68,7 +68,7 @@ var _user = {
 	},
 	resetPassword: function(userInfo, resolve, reject) {
 		_mm.request({
-			url: _mm.getServerUrl('/user/forget_reset_password.do'),
+			url: _mm.getServerUrl('./user/forget_reset_password.do'),
 			data: userInfo,
 			menthod: 'POST',
 			success: resolve,
