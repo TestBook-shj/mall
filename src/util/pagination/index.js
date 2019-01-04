@@ -2,7 +2,7 @@
  * @Author: TestBook-shj
  * @Date:   2019-01-03 22:30:33
  * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2019-01-03 23:23:46
+ * @Last Modified time: 2019-01-04 20:54:53
  */
 'use strict';
 var _mm = require('util/mm.js');
@@ -10,12 +10,22 @@ require('./index.css');
 var templatePagination = require('./index.string');
 
 var Pagination = function() {
+  var _this = this;
   this.defaultOption = {
     container: null,
     pageNum: 1,
     pageRange: 3,
     onSelectPage: null
   };
+  // 事件的处理
+  $(document).on('click', '.pg-item', function() {
+    var $this = $(this);
+    // 对于active和disabled按钮点击，不做处理
+    if ($this.hasClass('active') || $this.hasClass('disabled')) {
+      return;
+    }
+    (typeof _this.option.onSelectPage === 'function') ? _this.option.onSelectPage($this.data('value')): null;
+  });
 };
 // 渲染分页组件
 Pagination.prototype.render = function(userOption) {

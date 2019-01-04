@@ -2,7 +2,7 @@
  * @Author: TestBook-shj
  * @Date:   2019-01-01 22:36:07
  * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2019-01-03 23:19:44
+ * @Last Modified time: 2019-01-04 20:48:13
  */
 'use strict'
 require('./index.css');
@@ -90,7 +90,7 @@ var page = {
         hasPreviousPage: res.hasPreviousPage,
         prePage: res.prePage,
         hasNextPage: res.hasNextPage,
-        NextPage: res.NextPage,
+        nextPage: res.nextPage,
         pageNum: res.pageNum,
         pages: res.pages
       });
@@ -101,9 +101,14 @@ var page = {
   },
   // 加载分页信息
   loadPagination: function(pageInfo) {
+    var _this = this;
     this.pagination ? '' : (this.pagination = new Pagination());
     this.pagination.render($.extend({}, pageInfo, {
-      container: $('.pagination')
+      container: $('.pagination'),
+      onSelectPage: function(pageNum){
+        _this.data.listParam.pageNum = pageNum;
+        _this.loadList();
+      }
     }));
   }
 };
