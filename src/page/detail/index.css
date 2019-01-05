@@ -2,7 +2,7 @@
 * @Author: TestBook-shj
 * @Date:   2019-01-04 21:03:17
 * @Last Modified by:   TestBook-shj
-* @Last Modified time: 2019-01-04 22:19:15
+* @Last Modified time: 2019-01-05 22:20:14
 */
 /*图片区*/
 .intro-wrap {
@@ -145,7 +145,7 @@
   float: left;
   width: 100px;
   height: 50px;
-  line-height: 30px;
+  line-height: 50px;
   font-size: 16px;
   text-align: center;
   cursor: pointer;
@@ -163,4 +163,15 @@
 .detail-wrap .detail-con img{
   display: block;
   margin: 0 auto;
+}
+
+/*错误信息*/
+.err-tip{
+  height: 40px;
+  line-height: 60px;
+  color: #f60;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  background: #eee;
 }

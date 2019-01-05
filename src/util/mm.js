@@ -2,7 +2,7 @@
  * @Author: TestBook-shj
  * @Date:   2018-12-25 21:29:06
  * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2018-12-30 19:33:47
+ * @Last Modified time: 2019-01-05 23:23:09
  */
 
 'use strict';
@@ -85,7 +85,7 @@ var _mm = {
   },
   // 跳转首页
   goHome: function(){
-    window.location.href = './index.html()';
+    window.location.href = './index.html';
   }
 };
 
