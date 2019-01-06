@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2018-12-27 18:09:12
 * @Last Modified by:   TestBook-shj
-* @Last Modified time: 2019-01-05 23:15:01
+* @Last Modified time: 2019-01-06 20:27:51
 */
 'use strict'
 
@@ -22,6 +22,14 @@ var _cart = {
     _mm.request({
       url: _mm.getServerUrl('./cart/add.do'),
       data: productInfo,
+      success: resolve,
+      error: reject
+    });
+  },
+  // 获取购物车列表
+  getCartList: function(resolve, reject){
+    _mm.request({
+      url: _mm.getServerUrl('./cart/list.do'),
       success: resolve,
       error: reject
     });
