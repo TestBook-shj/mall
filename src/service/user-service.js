@@ -2,7 +2,7 @@
  * @Author: Administrator
  * @Date:   2018-12-27 17:51:02
  * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2019-01-02 22:53:00
+ * @Last Modified time: 2019-01-06 16:31:47
  */
 'use strict';
 var _mm = require('util/mm.js');
@@ -35,10 +35,7 @@ var _user = {
 	register: function(userInfo, resolve, reject) {
 		_mm.request({
 			url: _mm.getServerUrl('./user/register.do'),
-			data: {
-				type: 'userInfo',
-				str: username
-			},
+			data: userInfo,
 			menthod: 'POST',
 			success: resolve,
 			error: reject

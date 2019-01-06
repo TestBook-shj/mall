@@ -2,7 +2,7 @@
  * @Author: TestBook-shj
  * @Date:   2018-12-21 22:25:27
  * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2018-12-31 13:33:53
+ * @Last Modified time: 2019-01-06 16:17:01
  */
 'user strict';
 require('./index.css');
@@ -34,16 +34,16 @@ var page = {
   bindEvent: function() {
     var _this = this;
     // 验证username
-    $('#username').blur(function(){
+    $('#username').blur(function() {
       var username = $.trim($(this).val());
       // 用户名为空，不做验证
-      if(!username){
+      if (!username) {
         return;
       }
       // 异步验证用户名是否存在
-      _user.checkUsername(username, function(res){
+      _user.checkUsername(username, function(res) {
         formError.hide();
-      }, function(errMsg){
+      }, function(errMsg) {
         formError.show(errMsg);
       });
     });
@@ -104,7 +104,7 @@ var page = {
       return result;
     }
     // 验证密码的长度
-    if (formData.password.length<6) {
+    if (formData.password.length < 6) {
       result.msg = '密码长度不能少于6位';
       return result;
     }
@@ -114,22 +114,22 @@ var page = {
       return result;
     }
     // 验证手机号
-    if (_mm.validate(formData.password, 'phone')) {
+    if (!_mm.validate(formData.phone, 'phone')) {
       result.msg = '手机号码有误';
       return result;
     }
     // 验证邮箱
-    if (_mm.validate(formData.email, 'email')) {
+    if (!_mm.validate(formData.email, 'email')) {
       result.msg = '邮箱号不正确';
       return result;
     }
     // 验证密码提示问题
-    if (_mm.validate(formData.question, 'require')) {
+    if (!_mm.validate(formData.question, 'require')) {
       result.msg = '密码提示问题不能为空';
       return result;
     }
     // 验证密码提示问题答案
-    if (_mm.validate(formData.answer, 'require')) {
+    if (!_mm.validate(formData.answer, 'require')) {
       result.msg = '密码提示问题答案不能为空';
       return result;
     }

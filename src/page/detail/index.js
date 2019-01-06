@@ -2,7 +2,7 @@
  * @Author: TestBook-shj
  * @Date:   2019-01-04 21:02:58
  * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2019-01-05 23:11:12
+ * @Last Modified time: 2019-01-06 16:37:56
  */
 'use strict';
 require('./index.css');
@@ -57,11 +57,10 @@ var page = {
         productId: _this.data.listParam.productId,
         count: $('.p-count').val()
       }, function(res){
-        console.log(res)
-        // window.location.href = './result.html?type=cart-add';
+        window.location.href = './result.html?type=cart-add';
       }, function(errMsg){
         console.log(errMsg)
-        // _mm.errorTips(errMsg);
+        _mm.errorTips(errMsg);
       });
     });
   },
