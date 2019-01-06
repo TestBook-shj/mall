@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2018-12-27 17:15:13
 * @Last Modified by:   TestBook-shj
-* @Last Modified time: 2019-01-02 22:40:41
+* @Last Modified time: 2019-01-06 22:45:33
 */
 'use strict'
 require('./index.css');
@@ -52,9 +52,9 @@ var nav = {
 	// 加载购物车数量
 	loadCartCount: function(){
 		_cart.getCartCount(function(res){
-			$('.nav .cart-cont').text(res || 0);
+			$('.nav .cart-count').text(res || 0);
 		}, function(errMsg){
-			$('.nav .cart-cont').text(0);
+			$('.nav .cart-count').text(0);
 		});
 	}
 };

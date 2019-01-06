@@ -2,12 +2,12 @@
  * @Author: TestBook-shj
  * @Date:   2019-01-04 21:02:58
  * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2019-01-06 21:57:07
+ * @Last Modified time: 2019-01-06 22:48:35
  */
 'use strict';
 require('./index.css');
-require('page/common/nav/index.js');
 require('page/common/header/index.js');
+var nav = require('page/common/nav/index.js');
 var _mm = require('util/mm.js');
 var _cart = require('service/cart-service.js');
 var templateIndex = require('./index.string');
@@ -78,7 +78,7 @@ var page = {
         newCount = 0;
       if (type === 'plus') {
         if (currCount >= maxCount) {
-          _mm.errTips('改商品数量已达上限');
+          _mm.errorTips('改商品数量已达上限');
           return;
         }
         newCount = currCount + 1;
@@ -105,6 +105,33 @@ var page = {
         _this.deleteCartProduct(productId);
       }
     });
+    // 删除选中商品
+    $(document).on('click', '.delete-selected', function() {
+      if (window.confirm('确认要删除选中的商品？')) {
+        var arrProductIds = [],
+          $selectedItem = $('.cart-select:checked');
+        // 循环查找选中的productId
+        for (var i = 0, iLength = $selectedItem.length; i < iLength; i++) {
+          arrProductIds.push($($selectedItem[i]).parents('.cart-table').data('product-id'));
+        }
+        console.log(arrProductIds)
+        if (arrProductIds.length) {
+          _this.deleteCartProduct(arrProductIds.join(','));
+        } else {
+          _mm.errorTips('您还没选中要删除的商品');
+        }
+      }
+    });
+    // 提交购物车
+    $(document).on('click', '.btn-submit', function() {
+      // 总价大于0
+      if(_this.data.cartInfo && _this.data.cartInfo.cartTotalPrice > 0){
+        window.location.href = './confirm.html';
+      }
+      else{
+        _mm.errorTips('请选择商品后再提交');
+      }
+    });
   },
   // 加载购物车信息
   loadCart: function() {
@@ -125,6 +152,8 @@ var page = {
     // 生成html
     var cartHtml = _mm.renderHtml(templateIndex, data);
     $('.page-wrap').html(cartHtml);
+    // 通知导航的购物车跟新数量
+    nav.loadCartCount();
   },
   // 删除指定商品, 支持批量, productId用逗号分隔
   deleteCartProduct: function(productIds) {
