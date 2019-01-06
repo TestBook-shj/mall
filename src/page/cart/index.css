@@ -1,0 +1,70 @@
+/*
+* @Author: TestBook-shj
+* @Date:   2019-01-06 19:00:11
+* @Last Modified by:   TestBook-shj
+* @Last Modified time: 2019-01-06 19:54:22
+*/
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ebebeb;
+  margin-bottom: 10px;
+}
+
+/*header*/
+.cart-header {
+  background: #eee;
+}
+
+.cart-table .cart-cell {
+  height: 40px;
+  line-height: 40px;
+}
+
+.cart-table .cell-check {
+  width: 6%;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.cart-table .cell-img {
+  width: 10%;
+  text-align: left;
+}
+
+.cart-table .cell-img .p-img {
+  margin: 10px 0;
+  width: 80px;
+  height: 80px;
+  border: 1px solid #ddd;
+}
+
+.cart-table .cell-info {
+  width: 35%;
+  text-align: left;
+}
+
+.cart-header .cell-info {
+  width: 45%;
+  padding-left: 106px;
+}
+
+.cart-table .cell-price {
+  width: 10%;
+  text-align: center;
+}
+
+.cart-table .cell-count {
+  width: 15%;
+  text-align: center;
+}
+
+.cart-table .cell-total {
+  width: 14%;
+  text-align: center;
+}
+
+.cart-table .cell-opera {
+  width: 10%;
+  text-align: center;
+}

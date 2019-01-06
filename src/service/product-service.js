@@ -2,7 +2,7 @@
  * @Author: Administrator
  * @Date:   2018-12-27 17:51:02
  * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2019-01-05 21:58:20
+ * @Last Modified time: 2019-01-06 18:30:39
  */
 'use strict';
 var _mm = require('util/mm.js');
@@ -10,6 +10,7 @@ var _mm = require('util/mm.js');
 var _product = {
   // 获取商品列表
   getProductList: function(listParam, resolve, reject) {
+    console.log(listParam)
     _mm.request({
       url: _mm.getServerUrl('./product/list.do'),
       data: listParam,

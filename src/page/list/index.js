@@ -2,7 +2,7 @@
  * @Author: TestBook-shj
  * @Date:   2019-01-01 22:36:07
  * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2019-01-04 20:48:13
+ * @Last Modified time: 2019-01-06 18:35:29
  */
 'use strict'
 require('./index.css');
@@ -18,8 +18,8 @@ var page = {
   data: {
     listParam: {
       keyword: _mm.getUrlParam('keyword') || '',
-      catrgoryId: _mm.getUrlParam('catrgoryId') || '',
-      orderBy: _mm.getUrlParam('orderBy') || 'default',
+      catrgoryId: _mm.getUrlParam('categoryId') || '',
+      orderBy: _mm.getUrlParam('orderBy') || '',
       pageNum: _mm.getUrlParam('pageNum') || 1,
       pageSize: _mm.getUrlParam('pageSize') || 20
     }
