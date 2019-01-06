@@ -23,7 +23,7 @@
 </div>
 <div class="cart-list">
   {{#cartProductVoList}}
-  <table class="cart-table">
+  <table class="cart-table" data-product-id={{productId}}>
     <tr>
       <td class="cart-cell cell-check">
         <label for="" class="cart-label">
@@ -41,7 +41,7 @@
         </a>
       </td>
       <td class="cart-cell cell-info">
-        <a href="./detail.html?productId={{productId}}" class="link">{{productName}}}</a>
+        <a href="./detail.html?productId={{productId}}" class="link">{{productName}}</a>
       </td>
       <td class="cart-cell cell-price">￥{{productPrice}}</td>
       <td class="cart-cell cell-count">
