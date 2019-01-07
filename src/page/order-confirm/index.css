@@ -1,0 +1,64 @@
+/*
+* @Author: TestBook-shj
+* @Date:   2019-01-07 21:17:14
+* @Last Modified by:   TestBook-shj
+* @Last Modified time: 2019-01-07 22:03:31
+*/
+/*地址部分的样式*/
+.address-item {
+  float: left;
+  margin: 20px 20px 0 0;
+  width: 200px;
+  padding: 5px 8px;
+  border: 3px dashed #ccc;
+  cursor: pointer;
+}
+
+.address-item.active {
+  border: 3px dashed #c60023;
+} 
+
+.address-item:hover {
+  background: #fafafa;
+}
+
+.address-item .address-title {
+  color: #666;
+  height: 20px;
+  overflow: hidden;
+  line-height: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.address-item .address-detail {
+  margin-top: 5px;
+  height: 40px;
+  line-height: 20px;
+  overflow: hidden;
+  color: #666;
+}
+
+.address-item .address-opera {
+  text-align: right;
+  visibility: hidden;
+}
+
+.address-item:hover .address-opera{
+  visibility: visible;
+}
+
+.address-item .address-opera .link {
+  margin-right: 5px;
+}
+.address-item .address-new {
+  padding: 8px 0;
+  text-align: center;
+  color: #ccc;
+}
+.address-item .address-new .fa {
+  font-size: 50px;
+  line-height: 50px;
+}
+.address-item .address-new .text {
+  font-size: 12px;
+}

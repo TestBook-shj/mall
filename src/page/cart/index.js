@@ -2,7 +2,7 @@
  * @Author: TestBook-shj
  * @Date:   2019-01-04 21:02:58
  * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2019-01-06 22:48:35
+ * @Last Modified time: 2019-01-07 21:16:36
  */
 'use strict';
 require('./index.css');
@@ -126,7 +126,7 @@ var page = {
     $(document).on('click', '.btn-submit', function() {
       // 总价大于0
       if(_this.data.cartInfo && _this.data.cartInfo.cartTotalPrice > 0){
-        window.location.href = './confirm.html';
+        window.location.href = './order-confirm.html';
       }
       else{
         _mm.errorTips('请选择商品后再提交');
