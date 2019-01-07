@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2018-12-27 15:14:05
 * @Last Modified by:   TestBook-shj
-* @Last Modified time: 2018-12-31 20:55:01
+* @Last Modified time: 2019-01-07 22:22:18
 */
 /* css reset */
 *{
@@ -82,6 +82,7 @@ input[type='checkbox']{
 	height: 40px;
 	line-height: 40px;
 	vertical-align: middle;
+	text-align: center;
 	border: none;
 	background: #c50023;
 	font-size: 17px;
