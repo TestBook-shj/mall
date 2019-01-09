@@ -2,7 +2,7 @@
  * @Author: TestBook-shj
  * @Date:   2019-01-04 21:02:58
  * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2019-01-08 21:58:04
+ * @Last Modified time: 2019-01-09 22:02:53
  */
 'use strict';
 require('./index.css');
@@ -13,6 +13,7 @@ var _order = require('service/order-service.js');
 var _address = require('service/address-service.js');
 var templateProduct = require('./product-list.string');
 var templateAddress = require('./address-list.string');
+var addressModal = require('./address-modal.js');
 
 var page = {
   data: {
@@ -29,7 +30,7 @@ var page = {
   bindEvent: function(){
     var _this = this;
     // 地址选择
-    $(document).on('click', 'address-item', function(){
+    $(document).on('click', '.address-item', function(){
       var $this = $(this);
       $this.addClass('active')
         .siblings('.address-item').removeClass('active');
@@ -37,7 +38,7 @@ var page = {
     });
 
     // 订单的提交
-    $(document).on('click', 'order-submit', function(){
+    $(document).on('click', '.order-submit', function(){
       var shippingId = _this.data.selectedAddressId;
       if(shippingId){
         _order.createOrder({
@@ -50,6 +51,15 @@ var page = {
       }else{
         _mm.errorTips('请选择地址后再提交');
       }
+    });
+    // 地址的添加
+     $(document).on('click', '.address-add', function(){
+      addressModal.show({
+        isUpdate: false,
+        onsuccess: function(){
+          _this.loadAddressList();
+        }
+      });
     });
   },
   // 加载地址列表
