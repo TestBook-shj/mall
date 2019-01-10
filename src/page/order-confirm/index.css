@@ -2,7 +2,7 @@
 * @Author: TestBook-shj
 * @Date:   2019-01-07 21:17:14
 * @Last Modified by:   TestBook-shj
-* @Last Modified time: 2019-01-08 22:38:27
+* @Last Modified time: 2019-01-10 21:59:46
 */
 /*地址部分的样式*/
 .address-item,
@@ -184,7 +184,7 @@
 .form .form-line .label {
   display: block;
   float: left;
-  width: 80px;
+  width: 85px;
   text-align: right;
   height: 30px;
   line-height: 30px;
@@ -206,8 +206,8 @@
   margin-right: 10px;
 }
 
-.form .form-line .address-btn {
-  margin-left: 90px;
+.form .form-line .btn {
+  margin-left: 95px;
   height: 30px;
   line-height: 30px;
   font-size: 13px;
