@@ -2,7 +2,7 @@
  * @Author: Administrator
  * @Date:   2018-12-27 17:51:02
  * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2019-01-08 21:59:48
+ * @Last Modified time: 2019-01-11 23:02:45
  */
 'use strict';
 var _mm = require('util/mm.js');
@@ -24,7 +24,16 @@ var _order = {
       success: resolve,
       error: reject
     });
-  }
+  },
+  // 获取订单列表
+  getOrderList: function(listParam, resove, reject){
+    _mm.request({
+      url: _mm.getServerUrl('./order/list.do'),
+      data: listParam,
+      success: resolve,
+      error: reject
+    });
+  },
 };
 
 module.exports = _order;
