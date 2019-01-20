@@ -2,7 +2,7 @@
  * @Author: TestBook-shj
  * @Date:   2019-01-01 22:36:07
  * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2019-01-06 18:35:29
+ * @Last Modified time: 2019-01-20 15:44:13
  */
 'use strict'
 require('./index.css');
@@ -18,7 +18,7 @@ var page = {
   data: {
     listParam: {
       keyword: _mm.getUrlParam('keyword') || '',
-      catrgoryId: _mm.getUrlParam('categoryId') || '',
+      categoryId: _mm.getUrlParam('categoryId') || '',
       orderBy: _mm.getUrlParam('orderBy') || '',
       pageNum: _mm.getUrlParam('pageNum') || 1,
       pageSize: _mm.getUrlParam('pageSize') || 20
@@ -79,7 +79,7 @@ var page = {
       $pListCon = $('.p-list-con');
     $pListCon.html('<div class="loading"></div>');
     // 删除参数中不必要的字段
-    listParam.catrgoryId ? (delete listParam.keyword) : (delete listParam.catrgoryId);
+    listParam.categoryId ? (delete listParam.keyword) : (delete listParam.categoryId);
     // 请求接口
     _product.getProductList(listParam, function(res) {
       listHtml = _mm.renderHtml(templateIndex, {

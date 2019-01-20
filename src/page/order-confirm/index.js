@@ -2,7 +2,7 @@
  * @Author: TestBook-shj
  * @Date:   2019-01-04 21:02:58
  * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2019-01-10 22:48:02
+ * @Last Modified time: 2019-01-20 15:52:05
  */
 'use strict';
 require('./index.css');
@@ -87,7 +87,7 @@ var page = {
     $(document).on('click', '.address-delete', function(e) {
       e.stopPropagation();
       var id = $(this).parents('.addClass-item').data('id');
-      if (window.conform('确认要删除该地址吗')) {
+      if (window.confirm('确认要删除该地址吗')) {
         _address.deleteAddress(id, function(res) {
           _this.loadAddressList();
         }, function(errMsg) {

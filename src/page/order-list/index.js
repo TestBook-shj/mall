@@ -2,7 +2,7 @@
  * @Author: TestBook-shj
  * @Date:   2018-12-31 16:35:13
  * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2019-01-11 23:16:28
+ * @Last Modified time: 2019-01-20 15:21:50
  */
 'use strict'
 require('./index.css');
@@ -20,7 +20,7 @@ var page = {
       pageNum: 1,
       pageSize: 10
     }
-  }
+  },
   init: function() {
     this.onLoad();
   },
@@ -30,7 +30,7 @@ var page = {
     navSide.init({
       name: 'order-list'
     });
-    this.loadUserInfo();
+    // this.loadUserInfo();
   },
   // 加载订单列表
   loadOrderList: function() {

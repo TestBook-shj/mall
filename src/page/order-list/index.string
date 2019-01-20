@@ -45,4 +45,5 @@
 </table>
 {{/list}}
 {{^list}}
+<p class="err-tip">您暂时没有订单</p>
 {{/list}}

@@ -2,7 +2,7 @@
  * @Author: Administrator
  * @Date:   2018-12-27 17:51:02
  * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2019-01-11 23:02:45
+ * @Last Modified time: 2019-01-20 17:04:48
  */
 'use strict';
 var _mm = require('util/mm.js');
@@ -17,7 +17,7 @@ var _order = {
     });
   },
   // 提交订单
-  createOrder: function(orderInfo, resove, reject){
+  createOrder: function(orderInfo, resolve, reject) {
     _mm.request({
       url: _mm.getServerUrl('./order/create.do'),
       data: orderInfo,
@@ -26,7 +26,7 @@ var _order = {
     });
   },
   // 获取订单列表
-  getOrderList: function(listParam, resove, reject){
+  getOrderList: function(listParam, resolve, reject) {
     _mm.request({
       url: _mm.getServerUrl('./order/list.do'),
       data: listParam,
@@ -34,6 +34,28 @@ var _order = {
       error: reject
     });
   },
+  // 获取订单详情
+  getOrderDetail: function(orderNumber, resolve, reject) {
+    _mm.request({
+      url: _mm.getServerUrl('./order/detail.do'),
+      data: {
+        orderNo: orderNumber
+      },
+      success: resolve,
+      error: reject
+    });
+  },
+  // 取消订单
+  cancelOrder: function(orderNumber, resolve, reject) {
+    _mm.request({
+      url: _mm.getServerUrl('./order/cancel.do'),
+      data: {
+        orderNo: orderNumber
+      },
+      success: resolve,
+      error: reject
+    });
+  }
 };
 
 module.exports = _order;
