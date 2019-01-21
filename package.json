@@ -6,8 +6,8 @@
   "scripts": {
     "dev-mac": "WEBPACK_ENV=dev webpack-dev-server --inline --port 8088",
     "dev": "set WEBPACK_ENV=dev && webpack-dev-server --inline --port 8088",
-    "dist-mac": "WEBPACK_ENV=online webpack-p",
-    "dist": "set WEBPACK_ENV=online && webpack-p"
+    "dist-mac": "WEBPACK_ENV=online webpack -p",
+    "dist": "set WEBPACK_ENV=online && webpack -p"
   },
   "repository": {
     "type": "git",

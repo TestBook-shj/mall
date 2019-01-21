@@ -2,7 +2,7 @@
  * @Author: TestBook-shj
  * @Date:   2018-12-21 22:08:21
  * @Last Modified by:   TestBook-shj
- * @Last Modified time: 2019-01-20 20:43:13
+ * @Last Modified time: 2019-01-20 22:16:44
  */
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -16,6 +16,7 @@ var getHtmlConfig = function(name, title) {
   return {
     template: './src/view/' + name + '.html',
     filename: 'view/' + name + '.html',
+    favicon: './favicon.ico',
     title: title,
     inject: true,
     hash: true,
@@ -40,11 +41,12 @@ var config = {
     'user-pass-update': ['./src/page/user-pass-update/index.js'],
     'user-center': ['./src/page/user-center/index.js'],
     'user-center-update': ['./src/page/user-center-update/index.js'],
-    'result': ['./src/page/result/index.js']
+    'result': ['./src/page/result/index.js'],
+    'about': ['./src/page/about/index.js']
   },
   output: {
-    path: './dist',
-    publicPath: '/dist',
+    path: __dirname + '/dist/',
+    publicPath: 'dev' === WEBPACK_ENV ? '/dist/' : '//s.hayypmmall.com/mmall-fe/dist/',
     filename: 'js/[name].js'
   },
   externals: {
@@ -59,7 +61,11 @@ var config = {
       loader: 'url-loader?limit=100&name=resource/[name].[ext]'
     },{
       test:/\.string$/,
-      loader: 'html-loader'
+      loader: 'html-loader',
+      query: {
+        minimize: true,
+        removeAttributeQuotes: false
+      }
     }]
   },
   // 配置别名
@@ -95,7 +101,8 @@ var config = {
     new HtmlWebpackPlugin(getHtmlConfig('user-pass-update', '修改密码')),
     new HtmlWebpackPlugin(getHtmlConfig('user-center', '个人中心')),
     new HtmlWebpackPlugin(getHtmlConfig('user-center-update', '修改个人信息')),
-    new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果'))
+    new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果')),
+    new HtmlWebpackPlugin(getHtmlConfig('about', '关于mmall'))
   ]
 };
 
